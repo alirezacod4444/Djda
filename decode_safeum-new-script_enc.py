@@ -66,11 +66,11 @@ retry = 0
 accounts = []
 
 # Expiry date
-expiry_date = datetime.datetime(2024, 4, 18)
+expiry_date = datetime.datetime(2074, 4, 18)
 
 def work():
     global failed, success, retry
-    username = choice('qwertyuiooasdfghjklzxcvpbnm') + ''.join(choices(list('qwertyuioasdfghjklzxcvbnpm1234567890'), k=16))
+    username = choice('qwertyuiooasdfghjklzxcvpbnm') + ''.join(choices(list('qwertyuioasdfghjklzxcvbnpm1234567890'), k=22))
     # Check if the current date is past the expiry date
     if datetime.datetime.now() > expiry_date:
         print("Script expired")
@@ -87,10 +87,10 @@ def work():
         gzip = decompress(con.recv()).decode('utf-8')
         if '"status":"Success"' in gzip:
             success += 1
-            b = accounts.append(username + ':rrrr')
+            b = accounts.append(username + ':hhhh')
             print(b)
             with open('SafeUM.txt', 'a') as f:
-                f.write(username + ":rrrr | TG : @Theyhates_joker\n")
+                f.write(username + ":hhhh | TG : @Ali_joker\n")
 
         else:
             failed += 1
@@ -108,7 +108,7 @@ while True:
     print('\n\n\n' + ' ' * 25 + 'Success : ' + str(success) + '\n\n\n' + ' ' * 25 + 'Failed : ' + str(
         failed) + '\n\n\n' + ' ' * 25 + 'ReTry : ' + str(retry))
     hh = str(failed) + str(success) + str(retry)
-    if int(success) >= 50:
+    if int(success) >= 5000:
         fuck()
         print("Created Accounts Successfully")
         
